@@ -1,0 +1,36 @@
+class Employee:
+ # Static Variable: Shared across all instances
+    total_employees = 0
+    def __init__(self, name, emp_id, department):
+    # Instance variables: Specific to each employee
+        self.name = name
+
+
+        self.emp_id = emp_id
+        self.department = department
+        Employee.total_employees += 1  # Increment static variable
+
+
+    def display_employee(self):
+        print(f"Employee Name: {self.name}")
+
+
+        print(f"Employee ID: {self.emp_id}")
+        print(f"Department: {self.department}")
+
+
+    @staticmethod
+    def total_employee_count():
+        print(f"Total Employees: {Employee.total_employees}")
+
+
+# Real-Time Example
+emp1 = Employee("Alice", 101, "HR")
+emp2 = Employee("Bob", 102, "IT")
+emp3 = Employee("Charlie", 103, "Finance")
+emp4 = Employee("Chari", 104, "Manager")
+emp1.display_employee()
+emp2.display_employee()
+emp3.display_employee()
+emp4.display_employee()
+Employee.total_employee_count()
